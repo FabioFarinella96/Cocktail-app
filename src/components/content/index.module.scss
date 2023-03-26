@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Content {
+  width: 100%;
+  margin-bottom: 50px;
+
+  .categorySection {
+    @include flex-container;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .categoryList {
+    width: 89%;
+    height: 200px;
+    @include flex-container;
+    border-bottom: $border-containers;
+  }
+
+  .item {
+    font-size: 15px;
+    background-color: $secondary-color;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-weight: 700;
+    list-style-type: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $active-color;
+      color: $secondary-color;
+    }
+  }
+
+  .drinkList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Content .categoryList {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .categoryList .item {
+    font-size: 16px;
+  }
+}

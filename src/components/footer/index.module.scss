@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.Footer {
+  width: 100%;
+  height: 15vh;
+  border-top: $border-containers;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.Footer .footerText {
+  color: $primary-color;
+}
