@@ -62,14 +62,14 @@ const InfoDrinks = ({ data, setSingleDrinkContext, filteredList }) => {
           <div className={styles.downSection}>
             <ul className={styles.ingredients}>
               <p className={styles.type}>Ingredients:</p>
-              {ingredientsData().map((ingredient) => (
-                <li key={ingredient.idDrink}>{ingredient}</li>
+              {ingredientsData().map((ingredient, index) => (
+                <li key={`ingredient-${index}`}>{ingredient}</li>
               ))}
             </ul>
             <ul className={styles.measures}>
               <p className={styles.type}>Measures:</p>
-              {measuresData().map((measure) => (
-                <li key={measure.idDrink}>{measure}</li>
+              {measuresData().map((measure, index) => (
+                <li key={`measure-${index}`}>{measure}</li>
               ))}
             </ul>
           </div>
