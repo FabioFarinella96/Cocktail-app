@@ -13,7 +13,7 @@ const Header = ({ setModalVisibility, setReservation }) => {
         <RxHamburgerMenu className={styles.hamburgerMenu} />
       </div>
 
-      {/* <img className={styles.logo} src="/images/logo.png" alt="logo image" /> */}
+      <img className={styles.logo} src="/images/logo.png" alt="logo image" />
       <ul className={styles.navBar}>
         <li className={styles.item}>Home</li>
         <li className={styles.item}>About us</li>
