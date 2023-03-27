@@ -34,6 +34,7 @@ function App() {
   return (
     <div className={styles.App}>
       <Header
+        modalVisibility={modalVisibility}
         setModalVisibility={setModalVisibility}
         setReservation={setReservation}
       />
@@ -47,7 +48,6 @@ function App() {
               setSingleDrinkContext={setSingleDrinkContext}
               filteredList={filteredList(drinkList, "strCategory", category)}
               drinkList={drinkList}
-              category={category}
             />
           </div>
         </>

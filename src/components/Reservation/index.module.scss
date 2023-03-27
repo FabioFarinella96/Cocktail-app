@@ -52,6 +52,14 @@
     border: 0;
     border-radius: 20px;
     cursor: pointer;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .closeBtn {
+    display: none;
   }
 }
 
@@ -63,5 +71,22 @@
     position: absolute;
     top: 140px;
     left: calc(50vw - 300px);
+
+    .closeBtn {
+      display: inline;
+      color: $secondary-color;
+      font-size: 25px;
+      background-color: transparent;
+      border: 0;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(360deg);
+        transition: all 1s;
+      }
+    }
   }
 }

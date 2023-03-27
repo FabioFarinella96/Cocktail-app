@@ -13,11 +13,16 @@
     background-color: $secondary-color;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: absolute;
     padding: 10px;
     top: 180px;
     left: calc(50vw - 150px);
+  }
+
+  .PopUpIcon {
+    color: $active-color;
   }
 
   .title {

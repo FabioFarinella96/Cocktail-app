@@ -1,28 +1,81 @@
 @import "../../styles/variables";
+@import "../../styles/resolutions";
 
 .Header {
   width: 100%;
   height: 10vh;
   background-color: $primary-color;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
+  padding: 10px 20px;
   z-index: 1;
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 10;
+    margin-right: 40px;
+    .center {
+      width: 38px;
+
+      &::before {
+        content: "";
+        background: $secondary-color;
+        display: block;
+        height: 3px;
+        margin: 6px 0;
+        border-radius: 1px;
+        transition: $timeMedium;
+      }
+
+      &::after {
+        content: "";
+        background: $secondary-color;
+        display: block;
+        height: 3px;
+        margin: 6px 0;
+        border-radius: 1px;
+        transition: $timeMedium;
+      }
+
+      div {
+        background: $secondary-color;
+        display: block;
+        height: 3px;
+        margin: 6px 0;
+        transition: $timeMedium;
+        border-radius: 1px;
+      }
+    }
+
+    &__open {
+      .center {
+        &::before {
+          transform: translateY(9px) rotate(-135deg);
+        }
+        &::after {
+          transform: translateY(-9px) rotate(135deg);
+        }
+        div {
+          transform: scale(0);
+        }
+      }
+    }
+  }
 
   .logo {
     width: 90px;
   }
 
-  .hamburgerMenu {
-    font-size: 20px;
-    color: $secondary-color;
-    display: none;
-  }
-
   .navBar {
-    display: flex;
+    display: none;
     gap: 20px;
   }
 
@@ -48,27 +101,25 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .Header {
-    width: 95%;
-    height: 12vh;
+    width: 100%;
+    height: 8vh;
     justify-content: space-between;
-
-    padding: 0 16px;
-  }
-
-  .Header .hamburgerMenu {
-    display: inline;
-    font-size: 30px;
-    color: $secondary-color;
-    cursor: pointer;
+    align-items: center;
   }
 
   .Header .logo {
     width: 100px;
+    margin-left: 20px;
   }
 
   .Header .navBar {
+    display: flex;
+    margin-right: 40px;
+  }
+
+  .center {
     display: none;
   }
 }

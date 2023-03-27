@@ -5,7 +5,12 @@ import {
   HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
 
-const InfoDrinks = ({ data, setSingleDrinkContext, filteredList }) => {
+const InfoDrinks = ({
+  data,
+  setSingleDrinkContext,
+  filteredList,
+  drinkList,
+}) => {
   const ingredientsData = () => valuesExtractor(data, "strIngredient");
   const measuresData = () => valuesExtractor(data, "strMeasure");
 
@@ -14,6 +19,7 @@ const InfoDrinks = ({ data, setSingleDrinkContext, filteredList }) => {
       ...prev,
       isVisible: false,
     }));
+    console.log(drinkList);
   };
 
   const onHandlePrevBtn = () => {

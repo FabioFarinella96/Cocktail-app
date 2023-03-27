@@ -19,6 +19,12 @@ const Reservation = ({
   return (
     <div className={styles.Reservation}>
       <div className={styles.content}>
+        <button
+          onClick={() => setReservation(false)}
+          className={styles.closeBtn}
+        >
+          X
+        </button>
         <h2 className={styles.formTitle}>Prenota un tavolo</h2>
 
         {/* form */}
@@ -27,6 +33,7 @@ const Reservation = ({
             Inserisci il tuo nome:
           </label>
           <input
+            required
             value={inputValues.textValue}
             onChange={(e) =>
               setInputValues((prev) => ({
@@ -42,6 +49,7 @@ const Reservation = ({
             Inserisci una data:
           </label>
           <input
+            required
             value={inputValues.dateValue}
             onChange={(e) =>
               setInputValues((prev) => ({
@@ -57,6 +65,7 @@ const Reservation = ({
             Scegli un orario:
           </label>
           <input
+            required
             value={inputValues.timeValue}
             onChange={(e) =>
               setInputValues((prev) => ({

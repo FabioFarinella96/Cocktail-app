@@ -1,7 +1,6 @@
 import styles from "./index.module.scss";
-import { RxHamburgerMenu } from "react-icons/rx";
 
-const Header = ({ setModalVisibility, setReservation }) => {
+const Header = ({ modalVisibility, setModalVisibility, setReservation }) => {
   const onHandleClick = () => {
     setModalVisibility((prev) => !prev);
     setReservation(false);
@@ -9,11 +8,16 @@ const Header = ({ setModalVisibility, setReservation }) => {
 
   return (
     <div className={styles.Header}>
-      <div onClick={onHandleClick} className={styles.hamburgerMenu}>
-        <RxHamburgerMenu className={styles.hamburgerMenu} />
-      </div>
-
       <img className={styles.logo} src="/images/logo.png" alt="logo image" />
+      <div
+        onClick={onHandleClick}
+        className={`${styles.burger} ${modalVisibility && styles.burger__open}`}
+      >
+        {/* animazione hamburger menu aggiunta oggi 27/03/23 */}
+        <div className={styles.center}>
+          <div></div>
+        </div>
+      </div>
       <ul className={styles.navBar}>
         <li className={styles.item}>Home</li>
         <li className={styles.item}>About us</li>
